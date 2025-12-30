@@ -2,33 +2,39 @@
 import { CodeBlock } from "../components.docs/CodeBlock";
 import { PropsTable } from "../components.docs/PropsTable";
 
-const usage = `export default function Example() {
+const usage = `import { Input } from "@/components/ui/input";
+
+export default function Example() {
   return (
-    <div className="flex gap-3">
-      <button className="rounded-lg bg-black px-4 py-2 text-white">Primary</button>
-      <button className="rounded-lg bg-gray-100 px-4 py-2">Secondary</button>
-      <button className="rounded-lg border px-4 py-2">Outline</button>
-      <button className="rounded-lg bg-gray-200 px-4 py-2 text-gray-500" disabled>
-        Disabled
-      </button>
-    </div>
+    <input
+      className="w-full rounded-lg border px-3 py-2"
+      placeholder="you@example.com"
+    />
   );
 }`;
 
-export default function ButtonPage() {
+export default function InputDocs() {
   return (
-    <DocShell title="Button" description="Primary, secondary, outline, and disabled states.">
+    <DocShell title="Input" description="Input component examples.">
       {/* Preview */}
       <section className="rounded-xl border bg-white p-6">
         <h2 className="text-lg font-semibold">Preview</h2>
 
-        <div className="mt-4 flex flex-wrap gap-3">
-          <button className="rounded-lg bg-black px-4 py-2 text-white">Primary</button>
-          <button className="rounded-lg bg-gray-100 px-4 py-2">Secondary</button>
-          <button className="rounded-lg border px-4 py-2">Outline</button>
-          <button className="cursor-not-allowed rounded-lg bg-gray-200 px-4 py-2 text-gray-500" disabled>
-            Disabled
-          </button>
+        <div className="mt-4 max-w-2xl space-y-4">
+          <input
+            className="w-full rounded-lg border px-3 py-2"
+            placeholder="Text input"
+          />
+          <input
+            type="password"
+            className="w-full rounded-lg border px-3 py-2"
+            placeholder="Password"
+          />
+          <input
+            disabled
+            className="w-full rounded-lg border px-3 py-2 bg-gray-100"
+            placeholder="Disabled input"
+          />
         </div>
       </section>
 
@@ -41,10 +47,11 @@ export default function ButtonPage() {
       {/* Props */}
       <PropsTable
         rows={[
-          { name: "children", type: "ReactNode", default: "-", description: "Button label/content." },
-          { name: "variant", type: `"primary" | "secondary" | "outline"`, default: `"primary"`, description: "Visual style." },
-          { name: "disabled", type: "boolean", default: "false", description: "Disables the button." },
-          { name: "onClick", type: "() => void", default: "-", description: "Click handler." },
+          { name: "value", type: "string", default: "-", description: "Input value." },
+          { name: "onChange", type: "(e) => void", default: "-", description: "Change handler." },
+          { name: "placeholder", type: "string", default: "-", description: "Placeholder text." },
+          { name: "type", type: "string", default: "text", description: "HTML input type." },
+          { name: "disabled", type: "boolean", default: "false", description: "Disables the input." },
         ]}
       />
     </DocShell>
