@@ -1,6 +1,7 @@
- import { DocShell } from "../components.docs/DocShell";
-import { CodeBlock } from "../components.docs/CodeBlock";
-import { PropsTable } from "../components.docs/PropsTable";
+ import { DocShell } from "./components.docs/DocShell";
+import { CodeBlock } from "./components.docs/CodeBlock";
+import { PropsTable } from "./components.docs/PropsTable";
+
 
 const usage = `import { Input } from "@/components/ui/input";
 
@@ -57,3 +58,4 @@ export default function InputDocs() {
     </DocShell>
   );
 }
+
