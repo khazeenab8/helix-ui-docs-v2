@@ -1,22 +1,17 @@
-export default function ButtonDocs() {
+ 
+export default function ButtonPage() {
   return (
-    <>
+    <main style={{ padding: 32 }}>
       <h1>Button</h1>
-      <p>Buttons are used to trigger actions.</p>
+      <p>Buttons allow users to take actions with a single click.</p>
 
-      <button
-        style={{
-          padding: "10px 16px",
-          background: "#2563eb",
-          color: "white",
-          borderRadius: "10px",
-          border: "none",
-          cursor: "pointer",
-          fontWeight: 600,
-        }}
-      >
-        Primary Button
-      </button>
-    </>
+      <h2>Example</h2>
+      <button style={{ padding: "8px 16px" }}>Click me</button>
+
+      <h2>Usage</h2>
+      <pre>
+        <code>{`<Button>Click me</Button>`}</code>
+      </pre>
+    </main>
   );
 }
